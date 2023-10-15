@@ -1,0 +1,206 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\title{DBMS\textunderscore ASSIGNMENT}
+\author{Kanhaiya Jha}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\textbf{\huge \underline{ABSTRACT}} \\
+\\
+\\
+\\
+
+
+{\huge Here i have tried to make Multilingual  Dictionary which shows the word its meaning  and an example associated with that meaning ,partsofspeech of that word,synonym,
+Antonym of that word and the meaning of that word in three different INDIAN language }\pagebreak
+
+\hline\hspace{20  cm}\\
+\\
+\textbf{\huge TABLE OF CONTENTS} 
+\section{Chapter 1 : INTRODUCTION}
+\section{Chapter 2 : REQUIREMENTS}
+\section{Chapter 3 : ER DIAGRAM}
+\section{Chapter 4 : RELATIONAL  SCHEMA}
+\section{Chapter 5 : TABLE DESCRIPTION}
+\section{chapter 6 : BIBLIOGRAPHY}
+\pagebreak
+\hline\hspace{20  cm}
+\textbf{\huge 1. INTRODUCTION}\\
+
+\Large Multilingual Dictionary is the Dictionary that contains the word  its meaning ,synonym ,antonym,Example and the meaning of that word in three different INDIAN Languages such as Hindi,Sanskrit and Telugu. I am using the mysql and php for this project in  which i have connected my database with php.\hspace{40}\\
+\\
+\\
+\\
+\\
+\\
+\\
+\textbf{\huge 2. REQUIREMENTS}\hspace{20 cm}\\
+\\
+For completing this Assignment i am  using the MYSQL Database php  and UBUNTU 
+\\
+\\
+\\
+ \textbf{\huge \underline{ASSUMPTION:}}\\
+ 1. I am assuming that words stored in language table are strings instead of a multivalue attribute.
+
+ 2. The same thing is  applied for synonyms and antonyms.
+ 
+ \pagebreak
+
+
+\hline\hspace{20 cm}\\
+\\
+\textbf{\huge 3. ER DIAGRAM}\\
+
+
+\Large An   ER   model   is   typically   implemented   as   a   database.   In   a   simple   relational   database implementation, each row of a table represents one instance of an entity type, and each field in a table represents an attribute type. In a relational database a relationship between entities is implemented by storing the primary key of one entity as a pointer or "foreign key" in the table of another entity
+
+
+\begin{document}
+\maketitle
+\begin{center}
+    \includegraphics[width=1.4\textwidth]{ER.png}
+\end{center}\pagebreak
+
+\hline\hspace{20 cm}\\
+\\
+\textbf{\huge 4. RELATIONAL SCHEMA}\\
+
+\textbf{WORDS\textunderscore TABLE:}\
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|} 
+ \hline
+W\textunderscore ID(P\textunderscore K) & WORD & PRONUNCIATION & SYLLABALE &SCIENTIFIC\textunderscore NAME\\ 
+ \hline
+\end{tabular}
+\end{center}\\
+
+\textbf{PARTOFSPEECH:}\
+\begin{center}
+\begin{tabular}{ |c|c|c|} 
+ \hline
+W\textunderscore ID(F\textunderscore K) & P\textunderscore ID(P\textunderscore K) & POS\\
+ \hline
+\end{tabular}
+\end{center}
+
+\textbf{MEANING:}\
+\begin{center}
+\begin{tabular}{ |c|c|c|C|} 
+ \hline
+W\textunderscore ID(F\textunderscore K) & P\textunderscore ID(F\textunderscore K) & M\textunderscore ID(P\textunderscore K) & MEANING\\
+ \hline
+\end{tabular}
+\end{center}
+
+\textbf{SYNONYM\textunderscore TABLE:}\
+\begin{center}
+\begin{tabular}{ |c|c|c|C|} 
+ \hline\pagebreak
+\hline\hspace{20` cm}\\
+P\textunderscore ID(F\textunderscore K) & M\textunderscore ID(F\textunderscore K) & S\textunderscore ID(P\textunderscore K) & SYNONYM\\
+ \hline
+\end{tabular}
+\end{center}
+
+\textbf{ANTONYM\textunderscore TABLE:}\
+\begin{center}
+\begin{tabular}{ |c|c|c|C|} 
+ \hline
+P\textunderscore ID(F\textunderscore K) & M\textunderscore ID(F\textunderscore K) & A\textunderscore ID(P\textunderscore K) & ANTONYM\\
+ \hline
+\end{tabular}
+\end{center}
+
+\textbf{EXAMPLE:}\
+\begin{center}
+\begin{tabular}{ |c|c|} 
+ \hline
+M\textunderscore ID(F\textunderscore K)&EXAMPLE\\
+ \hline
+\end{tabular}
+\end{center}
+
+\textbf{LANGUAGE:}\
+\begin{center}
+\begin{tabular}{ |c|c|c|C|} 
+ \hline 
+ W\textunderscore ID(F\textunderscore K) & HINDI & SANSKRIT & TELUGU\\
+ \hline
+\end{tabular}
+\end{center}
+
+\textbf{IMAGE:}\
+\begin{center}
+\begin{tabular}{ |c|c|c|} 
+ \hline
+W\textunderscore ID(F\textunderscore K)& P\textunderscore ID(F\textunderscore K)& IMAGE\textunderscore FILE\\
+ \hline
+\end{tabular}
+\end{center}\hspace{10 cm}\pagebreak
+\hline\hspace{20 cm}\\
+\\
+\textbf{\huge \ 5. TABLE DESCRIPTION}\hspace{20 cm}\\
+\\
+\textbf{\huge \underline{WORDS}\textunderscore TABLE:}\\
+\textbf{W\textunderscore ID:} INT PRIMARY KEY\\
+\textbf{WORD:} VARCHAR\\
+\textbf{PRONUNCIATION:} VARCHAR\\
+\textbf{SYLLABLE:} VARCHAR\\
+\textbf{SCIENTIFIC\textunderscore NAME:} VARCHAR\\
+
+\textbf{\huge \underline{PARTOFSPEECH:}}\\
+\textbf{W\textunderscore ID:} INT FOREIGN KEY\\
+\textbf{P\textunderscore ID:} INT PRIMARY KEY\\
+\textbf{POS:} VARCHAR\\
+\textbf{SCIENTIFIC\textunderscore NAME:} VARCHAR\\
+
+\textbf{\huge \underline{MEANING:}}\\
+\textbf{M\textunderscore ID:} INT PRIMARY KEY\\
+\textbf{W\textunderscore ID:} INT FOREIGN KEY\\
+\textbf{P\textunderscore ID:} INT FOREIGN KEY\\
+\textbf{MEANING:} VARCHAR\hspace{10 cm}\\
+
+\textbf{\huge \underline{SYNONYM\textunderscore TABLE:}}\\
+\textbf{S\textunderscore ID:} INT PRIMARY KEY\\
+\textbf{M\textunderscore ID:} INT FOREIGN KEY\\
+\textbf{P\textunderscore ID:} INT FOREIGN KEY\\
+\textbf{SYNONYM:} VARCHAR\hspace{10 cm}\pagebreak
+\hline\hspace{20 cm}\\
+\\
+\textbf{\huge \underline{ANTONYM\textunderscore TABLE:}}\\
+\textbf{A\textunderscore ID:} INT PRIMARY KEY\\
+\textbf{M\textunderscore ID:} INT FOREIGN KEY\\
+\textbf{P\textunderscore ID:} INT FOREIGN KEY\\
+\textbf{ANTONYM:} VARCHAR\hspace{10 cm}\\
+
+\textbf{\huge \underline{EXAMPLE:}}\\
+\textbf{M\textunderscore ID:} INT FOREIGN KEY\\
+\textbf{EXAMPLE:} VARCHAR\hspace{10 cm}\\
+\\
+\textbf{\huge \underline{LANGUAGE:}}\\
+\textbf{W\textunderscore ID:} INT FOREIGN KEY\\
+\textbf{HINDI:} VARCHAR\\
+\textbf{SANSKRIT:} VARCHAR\\
+\textbf{TELUGU:} VARCHAR\hspace{10 cm}\\
+
+\textbf{\huge \underline{IMAGE:}}\\
+\textbf{W\textunderscore ID:} INT FOREIGN KEY\\
+\textbf{P\textunderscore ID:} INT FOREIGN KEY\\
+\textbf{IMAGE\textunderscore FILE:} BLOB\hspace{40 cm}
+\pagebreak
+\hline\hspace{20 cm}\\
+\\
+\textbf{\huge BIBLIOGRAPHY}\\
+
+\begin{enumerate}
+   \large\item Merriam Webster : \href{https://www.merriam-webster.com/}{}\\
+   To search for the meaning of the words and synonyms in English. \\
+
+   \large\item Cambridge Dictionary : \href{https://dictionary.cambridge.org/}{}\\
+   To search for the meaning of the words and synonyms in English. \\
+   
+\end{document}
